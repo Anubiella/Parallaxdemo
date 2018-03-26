@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>parallax demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <style>
+        .bg {
+            background-image: url('./dechirico.png');
+            background-repeat: no-repeat;
+            overflow: hidden;
+            height: 294px;
+            width: 640px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .dechimen {
+            bottom: -10px !important;
+            left: 160px !important;
+            top: unset !important;
+        }
+        .dechipillar {
+            bottom: -23px !important;
+            left: 500px !important;
+            top: unset !important;
+        }
+        #scene {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div id="scene" data-limit-y="10" data-limit-x="40">
+             <div data-depth="0.9" class="dechipillar">
+                <img src="./dechipillar.png" alt="de Chirico 2nd img">
+            </div>
+            <div data-depth="0.6" class="dechimen">
+                <img src="./dechimen.png" alt="de Chirico 3nd img">
+            </div>
+          </div>
+    </div>
+
+    <script>
+        // Pretty simple huh?
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
+    </script>
+</body>
+</html>
